@@ -5,142 +5,203 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Pensamientos Libidinosos:
+        Un estudio científico desde el paradigma de Tralfamadore
+    </title>
+
+
+    <!-- PDF.js -->
+
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.min.mjs">
+    </script>
+
 
     <style>
+
+        /* =========================================
+           BASE
+        ========================================= */
 
         * {
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             margin: 0;
+
             background: #ffffff;
+
             color: #111111;
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
         }
 
-        /* ==============================
+
+        /* =========================================
            CABECERA
-        ============================== */
+        ========================================= */
 
         header {
+
             padding: 35px 7vw;
 
             border-bottom: 1px solid #111111;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             font-size: 10px;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
         }
 
+
         header a {
+
             color: #111111;
+
             text-decoration: none;
         }
 
+
         header a:hover {
+
             text-decoration: underline;
+
             text-underline-offset: 5px;
         }
 
 
-        /* ==============================
-           CONTENIDO PRINCIPAL
-        ============================== */
+        /* =========================================
+           CONTENIDO
+        ========================================= */
 
         main {
+
             max-width: 1100px;
+
             margin: 0 auto;
 
-            padding: 110px 7vw 140px;
+            padding: 100px 7vw 120px;
         }
 
 
-        /* Número de publicación */
-
         .number {
+
             margin-bottom: 45px;
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             font-size: 10px;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
         }
 
 
-        /* Título */
-
         h1 {
+
             max-width: 950px;
 
             margin: 0;
 
-            font-size: clamp(48px, 7vw, 100px);
+            font-size:
+                clamp(48px, 7vw, 100px);
+
             line-height: 0.92;
 
             font-weight: normal;
+
             letter-spacing: -4px;
         }
 
 
-        /* Introducción */
-
         .intro {
+
             max-width: 620px;
 
             margin-top: 55px;
 
             font-size: 19px;
+
             line-height: 1.8;
         }
 
 
-        /* Fecha */
-
         .date {
-            margin-top: 60px;
 
-            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 55px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             font-size: 10px;
+
             letter-spacing: 1.5px;
+
             text-transform: uppercase;
         }
 
 
-        /* ==============================
+        /* =========================================
            DOCUMENTO
-        ============================== */
+        ========================================= */
 
         .document {
 
-            margin-top: 110px;
+            margin-top: 100px;
+
             padding-top: 35px;
 
             border-top: 1px solid #111111;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
         }
 
 
         .document-label {
 
-            font-size: 11px;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+
             letter-spacing: 2px;
+
+            text-transform: uppercase;
         }
 
 
@@ -150,47 +211,206 @@
 
             margin-top: 25px;
 
-            font-family: Georgia, "Times New Roman", serif;
             font-size: 17px;
-            line-height: 1.7;
 
-            text-transform: none;
-            letter-spacing: 0;
+            line-height: 1.7;
         }
 
 
-        /* ==============================
-           VISOR PDF
-        ============================== */
+        /* =========================================
+           CONTROLES DEL VISOR
+        ========================================= */
 
-        .pdf-container {
+        .viewer-controls {
 
-            width: 100%;
-            height: 85vh;
+            margin-top: 55px;
 
-            margin-top: 60px;
+            padding: 18px 0;
 
             border-top: 1px solid #dddddd;
+
             border-bottom: 1px solid #dddddd;
 
-            background: #f5f5f5;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
         }
 
 
-        .pdf-container iframe {
+        .viewer-group {
 
-            width: 100%;
-            height: 100%;
+            display: flex;
 
-            border: none;
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .viewer-button {
+
+            width: 38px;
+
+            height: 32px;
+
+            padding: 0;
+
+            border: 1px solid #111111;
+
+            background: #ffffff;
+
+            color: #111111;
+
+            cursor: pointer;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 13px;
+        }
+
+
+        .viewer-button:hover {
+
+            background: #111111;
+
+            color: #ffffff;
+        }
+
+
+        .viewer-button:disabled {
+
+            opacity: 0.3;
+
+            cursor: default;
+
+            background: #ffffff;
+
+            color: #111111;
+        }
+
+
+        .page-counter {
+
+            min-width: 85px;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        .zoom-value {
+
+            min-width: 55px;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           VISOR
+        ========================================= */
+
+        .pdf-viewer {
+
+            margin-top: 35px;
+
+            padding: 45px 20px;
+
+            background: #eeeeee;
+
+            min-height: 500px;
+
+            overflow-x: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 30px;
+
+            user-select: none;
+        }
+
+
+        .pdf-page {
 
             display: block;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.12);
+
+            max-width: none;
         }
 
 
-        /* ==============================
-           PIE DE PÁGINA
-        ============================== */
+        .loading {
+
+            padding: 80px 20px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .error {
+
+            padding: 80px 20px;
+
+            max-width: 500px;
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           PIE
+        ========================================= */
 
         footer {
 
@@ -198,75 +418,86 @@
 
             border-top: 1px solid #111111;
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             font-size: 10px;
+
             letter-spacing: 1.5px;
+
             text-transform: uppercase;
         }
 
 
-        /* ==============================
-           MÓVILES
-        ============================== */
+        /* =========================================
+           MÓVIL
+        ========================================= */
 
         @media (max-width: 700px) {
+
 
             header {
 
                 padding: 25px;
-
             }
 
 
             header a {
 
                 font-size: 8px;
-
             }
 
 
             main {
 
-                padding: 70px 25px 100px;
-
+                padding:
+                    70px
+                    25px
+                    90px;
             }
 
 
             h1 {
 
                 font-size: 48px;
-                letter-spacing: -2px;
 
+                letter-spacing: -2px;
             }
 
 
             .intro {
 
                 font-size: 17px;
-
             }
 
 
             .document {
 
-                margin-top: 80px;
-
+                margin-top: 75px;
             }
 
 
-            .pdf-container {
+            .viewer-controls {
 
-                height: 75vh;
+                flex-wrap: wrap;
 
-                margin-top: 40px;
+                justify-content: center;
+            }
 
+
+            .pdf-viewer {
+
+                padding:
+                    25px
+                    10px;
             }
 
 
             footer {
 
                 padding: 30px 25px;
-
             }
 
         }
@@ -279,33 +510,40 @@
 <body>
 
 
-    <!-- ==============================
+    <!-- =========================================
          CABECERA
-    ============================== -->
+    ========================================= -->
 
     <header>
 
         <a href="index.html">
+
             Pensamientos Libidinosos
+
         </a>
 
+
         <a href="index.html">
+
             ← Archivo
+
         </a>
 
     </header>
 
 
 
-    <!-- ==============================
+    <!-- =========================================
          CONTENIDO
-    ============================== -->
+    ========================================= -->
 
     <main>
 
 
         <div class="number">
+
             001 — Ensayo
+
         </div>
 
 
@@ -338,9 +576,9 @@
 
 
 
-        <!-- ==============================
-             PDF
-        ============================== -->
+        <!-- =====================================
+             DOCUMENTO
+        ===================================== -->
 
         <section class="document">
 
@@ -355,21 +593,102 @@
 
             <p class="document-description">
 
-                Pensamientos Libidinosos: Un estudio científico
-                desde el paradigma de Tralfamadore.
+                Pensamientos Libidinosos:
+                Un estudio científico desde
+                el paradigma de Tralfamadore.
 
             </p>
 
 
 
-            <div class="pdf-container">
+            <!-- CONTROLES -->
+
+            <div class="viewer-controls">
 
 
-                <iframe
-                    src="pdf/pensamientos-libidinosos-tralfamadore.pdf#toolbar=0&navpanes=0&scrollbar=1"
-                    title="Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore">
-                </iframe>
+                <div class="viewer-group">
 
+                    <button
+                        class="viewer-button"
+                        id="previous"
+                        aria-label="Página anterior">
+
+                        ←
+
+                    </button>
+
+
+                    <div
+                        class="page-counter"
+                        id="page-counter">
+
+                        1 / —
+
+                    </div>
+
+
+                    <button
+                        class="viewer-button"
+                        id="next"
+                        aria-label="Página siguiente">
+
+                        →
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="viewer-group">
+
+
+                    <button
+                        class="viewer-button"
+                        id="zoom-out"
+                        aria-label="Alejar">
+
+                        −
+
+                    </button>
+
+
+                    <div
+                        class="zoom-value"
+                        id="zoom-value">
+
+                        100%
+
+                    </div>
+
+
+                    <button
+                        class="viewer-button"
+                        id="zoom-in"
+                        aria-label="Acercar">
+
+                        +
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- VISOR -->
+
+            <div
+                class="pdf-viewer"
+                id="pdf-viewer">
+
+                <div class="loading">
+
+                    Cargando documento…
+
+                </div>
 
             </div>
 
@@ -381,15 +700,362 @@
 
 
 
-    <!-- ==============================
+    <!-- =========================================
          PIE
-    ============================== -->
+    ========================================= -->
 
     <footer>
 
         Pensamientos Libidinosos · 001
 
     </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script type="module">
+
+
+        import * as pdfjsLib from
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.min.mjs";
+
+
+        /* =====================================
+           CONFIGURACIÓN
+        ===================================== */
+
+
+        const pdfUrl =
+            "pdf/pensamientos-libidinosos-tralfamadore.pdf";
+
+
+        const viewer =
+            document.getElementById("pdf-viewer");
+
+
+        const previousButton =
+            document.getElementById("previous");
+
+
+        const nextButton =
+            document.getElementById("next");
+
+
+        const pageCounter =
+            document.getElementById("page-counter");
+
+
+        const zoomIn =
+            document.getElementById("zoom-in");
+
+
+        const zoomOut =
+            document.getElementById("zoom-out");
+
+
+        const zoomValue =
+            document.getElementById("zoom-value");
+
+
+        let pdfDocument = null;
+
+        let currentPage = 1;
+
+        let scale = 1.0;
+
+
+        /* =====================================
+           WORKER DE PDF.JS
+        ===================================== */
+
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@6.3.289/build/pdf.worker.min.mjs";
+
+
+        /* =====================================
+           CARGAR PDF
+        ===================================== */
+
+
+        async function loadPdf() {
+
+            try {
+
+                const loadingTask =
+                    pdfjsLib.getDocument(pdfUrl);
+
+
+                pdfDocument =
+                    await loadingTask.promise;
+
+
+                pageCounter.textContent =
+                    `1 / ${pdfDocument.numPages}`;
+
+
+                await renderPage(currentPage);
+
+                updateButtons();
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                viewer.innerHTML = `
+                    <div class="error">
+                        No fue posible cargar el documento.
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+        /* =====================================
+           RENDERIZAR PÁGINA
+        ===================================== */
+
+
+        async function renderPage(pageNumber) {
+
+
+            viewer.innerHTML = "";
+
+
+            const page =
+                await pdfDocument.getPage(pageNumber);
+
+
+            const viewport =
+                page.getViewport({
+                    scale: scale
+                });
+
+
+            const canvas =
+                document.createElement("canvas");
+
+
+            canvas.className =
+                "pdf-page";
+
+
+            const context =
+                canvas.getContext("2d");
+
+
+            const outputScale =
+                window.devicePixelRatio || 1;
+
+
+            canvas.width =
+                Math.floor(
+                    viewport.width *
+                    outputScale
+                );
+
+
+            canvas.height =
+                Math.floor(
+                    viewport.height *
+                    outputScale
+                );
+
+
+            canvas.style.width =
+                Math.floor(
+                    viewport.width
+                ) + "px";
+
+
+            canvas.style.height =
+                Math.floor(
+                    viewport.height
+                ) + "px";
+
+
+            const transform =
+                outputScale !== 1
+                    ? [
+                        outputScale,
+                        0,
+                        0,
+                        outputScale,
+                        0,
+                        0
+                    ]
+                    : null;
+
+
+            viewer.appendChild(canvas);
+
+
+            await page.render({
+
+                canvasContext: context,
+
+                transform: transform,
+
+                viewport: viewport
+
+            }).promise;
+
+
+            pageCounter.textContent =
+                `${currentPage} / ${pdfDocument.numPages}`;
+
+
+            zoomValue.textContent =
+                `${Math.round(scale * 100)}%`;
+
+        }
+
+
+        /* =====================================
+           BOTONES ANTERIOR / SIGUIENTE
+        ===================================== */
+
+
+        previousButton.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    currentPage <= 1 ||
+                    !pdfDocument
+                ) {
+
+                    return;
+
+                }
+
+
+                currentPage--;
+
+                await renderPage(currentPage);
+
+                updateButtons();
+
+            }
+        );
+
+
+        nextButton.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    !pdfDocument ||
+                    currentPage >= pdfDocument.numPages
+                ) {
+
+                    return;
+
+                }
+
+
+                currentPage++;
+
+                await renderPage(currentPage);
+
+                updateButtons();
+
+            }
+        );
+
+
+        /* =====================================
+           ZOOM
+        ===================================== */
+
+
+        zoomIn.addEventListener(
+            "click",
+            async () => {
+
+                if (scale >= 2.5) {
+
+                    return;
+
+                }
+
+
+                scale += 0.15;
+
+                await renderPage(currentPage);
+
+            }
+        );
+
+
+        zoomOut.addEventListener(
+            "click",
+            async () => {
+
+                if (scale <= 0.6) {
+
+                    return;
+
+                }
+
+
+                scale -= 0.15;
+
+                await renderPage(currentPage);
+
+            }
+        );
+
+
+        /* =====================================
+           ESTADO DE LOS BOTONES
+        ===================================== */
+
+
+        function updateButtons() {
+
+
+            previousButton.disabled =
+                currentPage <= 1;
+
+
+            nextButton.disabled =
+                !pdfDocument ||
+                currentPage >= pdfDocument.numPages;
+
+        }
+
+
+        /* =====================================
+           EVITAR MENÚ CONTEXTUAL SOBRE VISOR
+        ===================================== */
+
+
+        viewer.addEventListener(
+            "contextmenu",
+            event => {
+
+                event.preventDefault();
+
+            }
+        );
+
+
+        /* =====================================
+           INICIAR
+        ===================================== */
+
+
+        loadPdf();
+
+    </script>
 
 
 </body>
