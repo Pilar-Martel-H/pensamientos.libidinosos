@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cabalgando la nota — Pensamientos Libidinosos</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            color: #111111;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+
+        /* ==============================
+           CABECERA
+        ============================== */
+
+        header {
+            padding: 32px 7vw;
+
+            border-bottom: 1px solid #111111;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header a {
+            color: #111111;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+
+        /* ==============================
+           CONTENIDO
+        ============================== */
+
+        main {
+            max-width: 1050px;
+            margin: 0 auto;
+
+            padding: 90px 7vw 120px;
+        }
+
+
+        .number {
+            margin-bottom: 40px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* ==============================
+           TÍTULO
+        ============================== */
+
+        h1 {
+            max-width: 820px;
+
+            margin: 0;
+
+            font-size: clamp(42px, 5.5vw, 76px);
+            line-height: 0.95;
+
+            font-weight: normal;
+            letter-spacing: -2.5px;
+        }
+
+
+        /* ==============================
+           INTRODUCCIÓN
+        ============================== */
+
+        .intro {
+            max-width: 600px;
+
+            margin-top: 48px;
+
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           FECHA
+        ============================== */
+
+        .date {
+            margin-top: 50px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+
+        /* ==============================
+           DOCUMENTO
+        ============================== */
+
+        .document {
+
+            margin-top: 90px;
+
+            padding-top: 32px;
+
+            border-top: 1px solid #111111;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+
+        .document-label {
+
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+
+        .document-description {
+
+            max-width: 580px;
+
+            margin-top: 22px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.7;
+
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+
+        /* ==============================
+           VISOR PDF
+        ============================== */
+
+        .pdf-container {
+
+            width: 100%;
+
+            height: 82vh;
+
+            margin-top: 50px;
+
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+
+            background: #f5f5f5;
+        }
+
+
+        .pdf-container iframe {
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+
+            display: block;
+        }
+
+
+        /* ==============================
+           PIE
+        ============================== */
+
+        footer {
+
+            padding: 28px 7vw;
+
+            border-top: 1px solid #111111;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+
+        /* ==============================
+           MÓVIL
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 25px;
+            }
+
+            header a {
+                font-size: 8px;
+            }
+
+            main {
+                padding: 65px 25px 90px;
+            }
+
+            h1 {
+                font-size: 40px;
+                letter-spacing: -1.5px;
+            }
+
+            .intro {
+                font-size: 17px;
+                margin-top: 40px;
+            }
+
+            .document {
+                margin-top: 70px;
+            }
+
+            .pdf-container {
+                height: 75vh;
+                margin-top: 40px;
+            }
+
+            footer {
+                padding: 28px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html">
+        Pensamientos Libidinosos
+    </a>
+
+    <a href="index.html">
+        ← Archivo
+    </a>
+
+</header>
+
+
+
+<main>
+
+
+    <div class="number">
+        002 — Ensayo
+    </div>
+
+
+
+    <h1>
+        Cabalgando la nota
+    </h1>
+
+
+
+    <div class="intro">
+
+        Un nuevo texto del archivo
+        Pensamientos Libidinosos.
+
+    </div>
+
+
+
+    <div class="date">
+        30 septiembre 2026
+    </div>
+
+
+
+    <section class="document">
+
+
+        <div class="document-label">
+            Documento · Lectura
+        </div>
+
+
+        <p class="document-description">
+
+            Cabalgando la nota.
+
+        </p>
+
+
+        <div class="pdf-container">
+
+            <iframe
+                src="pdf/cabalgando-la-nota.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                title="Cabalgando la nota">
+            </iframe>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    Pensamientos Libidinosos · 002
+
+</footer>
+
+
+</body>
+
+</html>
