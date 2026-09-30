@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,8 +8,13 @@
     <title>Pensamientos Libidinosos</title>
 
     <style>
+
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -18,132 +24,271 @@
             font-family: Georgia, "Times New Roman", serif;
         }
 
+        /* ---------- CABECERA ---------- */
+
         header {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 70px 30px 40px;
+            min-height: 72vh;
+            padding: 70px 7vw 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             border-bottom: 1px solid #111111;
         }
 
-        .site-title {
-            font-size: 42px;
-            font-weight: normal;
-            letter-spacing: -1px;
-            margin: 0;
-        }
+        .top-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        .site-description {
-            margin-top: 12px;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-size: 10px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 30px;
+        .top-line span:last-child {
+            text-align: right;
         }
 
-        .year {
+        .title-container {
+            max-width: 1000px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(60px, 10vw, 145px);
+            line-height: 0.82;
+            font-weight: normal;
+            letter-spacing: -7px;
+        }
+
+        .subtitle {
+            margin-top: 35px;
+            max-width: 500px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
+            line-height: 1.7;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
+        /* ---------- CONTENIDO ---------- */
+
+        main {
+            padding: 100px 7vw;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            margin-bottom: 80px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-header span:last-child {
+            font-size: 10px;
+        }
+
+        /* ---------- PUBLICACIONES ---------- */
+
         article {
-            padding: 0 0 45px;
-            margin-bottom: 45px;
-            border-bottom: 1px solid #dddddd;
+            position: relative;
+
+            display: grid;
+            grid-template-columns: 120px minmax(0, 650px) 1fr;
+            gap: 40px;
+
+            padding: 35px 0 55px;
+
+            border-top: 1px solid #dddddd;
+        }
+
+        .number {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
         }
 
         article h2 {
-            font-size: 30px;
+            margin: 0 0 20px;
+
+            font-size: clamp(30px, 4vw, 55px);
+            line-height: 0.95;
             font-weight: normal;
-            margin: 0 0 12px;
+            letter-spacing: -2px;
+        }
+
+        article h2 a {
+            color: #111111;
+            text-decoration: none;
+        }
+
+        article h2 a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 7px;
         }
 
         article p {
-            max-width: 650px;
+            margin: 0;
+            max-width: 580px;
+
             font-size: 17px;
             line-height: 1.7;
-            margin: 0 0 18px;
         }
 
-        .date {
+        .metadata {
+            align-self: end;
+
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
+            font-size: 10px;
+            line-height: 1.7;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        /* ---------- PIE ---------- */
+
+        footer {
+            padding: 35px 7vw;
+
+            border-top: 1px solid #111111;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
-        footer {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px;
-            border-top: 1px solid #111111;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            letter-spacing: 1px;
-        }
+        /* ---------- MÓVIL ---------- */
 
-        @media (max-width: 600px) {
+        @media (max-width: 750px) {
 
             header {
-                padding: 45px 20px 30px;
+                min-height: 80vh;
+                padding: 35px 25px 40px;
             }
 
-            .site-title {
-                font-size: 32px;
+            .top-line {
+                font-size: 8px;
+            }
+
+            h1 {
+                font-size: clamp(55px, 17vw, 100px);
+                letter-spacing: -4px;
+            }
+
+            .subtitle {
+                font-size: 10px;
+                max-width: 300px;
             }
 
             main {
-                padding: 40px 20px;
+                padding: 70px 25px;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+
+            article {
+                display: block;
+                padding: 30px 0 45px;
+            }
+
+            .number {
+                margin-bottom: 25px;
             }
 
             article h2 {
-                font-size: 25px;
+                margin-bottom: 20px;
+                font-size: 42px;
             }
 
             article p {
                 font-size: 16px;
             }
 
+            .metadata {
+                margin-top: 30px;
+                text-align: left;
+            }
+
             footer {
-                padding: 25px 20px;
+                padding: 30px 25px;
+                display: block;
+            }
+
+            footer span:last-child {
+                display: block;
+                margin-top: 10px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <header>
 
-        <h1 class="site-title">
-            Pensamientos Libidinosos
+<header>
+
+    <div class="top-line">
+        <span>Archivo personal</span>
+        <span>2026 — ∞</span>
+    </div>
+
+
+    <div class="title-container">
+
+        <h1>
+            Pensamientos<br>
+            Libidinosos
         </h1>
 
-        <div class="site-description">
-            Textos · documentos · lecturas
+        <div class="subtitle">
+            Textos, documentos y otras formas de pensamiento
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
-    <main>
 
-        <div class="year">
-            2026
+<main>
+
+    <div class="section-header">
+        <span>Archivo</span>
+        <span>01 — 2026</span>
+    </div>
+
+
+    <article>
+
+        <div class="number">
+            001
         </div>
 
 
-        <article>
+        <div>
 
             <h2>
-                Primera publicación
+                <a href="#">
+                    Primera publicación
+                </a>
             </h2>
 
             <p>
@@ -151,21 +296,34 @@
                 Próximamente aparecerán aquí las primeras publicaciones.
             </p>
 
-            <div class="date">
-                30 septiembre 2026
-            </div>
-
-        </article>
+        </div>
 
 
-    </main>
+        <div class="metadata">
+            30 septiembre<br>
+            2026
+        </div>
+
+    </article>
 
 
-    <footer>
+</main>
 
-        Pensamientos Libidinosos · 2026
 
-    </footer>
+
+<footer>
+
+    <span>
+        Pensamientos Libidinosos
+    </span>
+
+    <span>
+        Archivo abierto
+    </span>
+
+</footer>
+
 
 </body>
 </html>
+```
