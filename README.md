@@ -1,0 +1,2 @@
+# pensamientos.libidinosos
+Bog Personal
