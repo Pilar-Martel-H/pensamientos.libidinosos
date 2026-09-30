@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,6 +15,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             background: #ffffff;
@@ -21,8 +26,13 @@
             font-family: Georgia, "Times New Roman", serif;
         }
 
+        /* ==============================
+           CABECERA
+        ============================== */
+
         header {
             padding: 35px 7vw;
+
             border-bottom: 1px solid #111111;
 
             display: flex;
@@ -42,24 +52,38 @@
 
         header a:hover {
             text-decoration: underline;
+            text-underline-offset: 5px;
         }
 
+
+        /* ==============================
+           CONTENIDO PRINCIPAL
+        ============================== */
+
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
+
             padding: 110px 7vw 140px;
         }
 
+
+        /* Número de publicación */
+
         .number {
+            margin-bottom: 45px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 45px;
         }
 
+
+        /* Título */
+
         h1 {
-            max-width: 900px;
+            max-width: 950px;
 
             margin: 0;
 
@@ -70,6 +94,9 @@
             letter-spacing: -4px;
         }
 
+
+        /* Introducción */
+
         .intro {
             max-width: 620px;
 
@@ -78,6 +105,9 @@
             font-size: 19px;
             line-height: 1.8;
         }
+
+
+        /* Fecha */
 
         .date {
             margin-top: 60px;
@@ -88,7 +118,13 @@
             text-transform: uppercase;
         }
 
+
+        /* ==============================
+           DOCUMENTO
+        ============================== */
+
         .document {
+
             margin-top: 110px;
             padding-top: 35px;
 
@@ -100,8 +136,17 @@
             text-transform: uppercase;
         }
 
-        .document p {
-            max-width: 500px;
+
+        .document-label {
+
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+
+        .document-description {
+
+            max-width: 600px;
 
             margin-top: 25px;
 
@@ -113,7 +158,42 @@
             letter-spacing: 0;
         }
 
+
+        /* ==============================
+           VISOR PDF
+        ============================== */
+
+        .pdf-container {
+
+            width: 100%;
+            height: 85vh;
+
+            margin-top: 60px;
+
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+
+            background: #f5f5f5;
+        }
+
+
+        .pdf-container iframe {
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+
+            display: block;
+        }
+
+
+        /* ==============================
+           PIE DE PÁGINA
+        ============================== */
+
         footer {
+
             padding: 30px 7vw;
 
             border-top: 1px solid #111111;
@@ -124,23 +204,69 @@
             text-transform: uppercase;
         }
 
+
+        /* ==============================
+           MÓVILES
+        ============================== */
+
         @media (max-width: 700px) {
 
             header {
+
                 padding: 25px;
+
             }
+
+
+            header a {
+
+                font-size: 8px;
+
+            }
+
 
             main {
+
                 padding: 70px 25px 100px;
+
             }
+
 
             h1 {
+
                 font-size: 48px;
                 letter-spacing: -2px;
+
             }
 
+
             .intro {
+
                 font-size: 17px;
+
+            }
+
+
+            .document {
+
+                margin-top: 80px;
+
+            }
+
+
+            .pdf-container {
+
+                height: 75vh;
+
+                margin-top: 40px;
+
+            }
+
+
+            footer {
+
+                padding: 30px 25px;
+
             }
 
         }
@@ -153,69 +279,120 @@
 <body>
 
 
-<header>
+    <!-- ==============================
+         CABECERA
+    ============================== -->
 
-    <a href="index.html">
-        Pensamientos Libidinosos
-    </a>
+    <header>
 
-    <a href="index.html">
-        ← Archivo
-    </a>
+        <a href="index.html">
+            Pensamientos Libidinosos
+        </a>
 
-</header>
+        <a href="index.html">
+            ← Archivo
+        </a>
 
-
-
-<main>
-
-    <div class="number">
-        001 — Ensayo
-    </div>
-
-
-    <h1>
-        Pensamientos Libidinosos:
-        Un estudio científico desde
-        el paradigma de Tralfamadore
-    </h1>
-
-
-    <div class="intro">
-
-        Una investigación sobre el pensamiento,
-        el deseo y sus posibles coordenadas
-        desde una perspectiva tralfamadoriana.
-
-    </div>
-
-
-    <div class="date">
-        30 septiembre 2026
-    </div>
-
-
-    <section class="document">
-
-        Documento
-
-        <p>
-            El documento estará disponible aquí próximamente.
-        </p>
-
-    </section>
-
-
-</main>
+    </header>
 
 
 
-<footer>
+    <!-- ==============================
+         CONTENIDO
+    ============================== -->
 
-    Pensamientos Libidinosos · 001
+    <main>
 
-</footer>
+
+        <div class="number">
+            001 — Ensayo
+        </div>
+
+
+
+        <h1>
+
+            Pensamientos Libidinosos:
+            Un estudio científico desde
+            el paradigma de Tralfamadore
+
+        </h1>
+
+
+
+        <div class="intro">
+
+            Una investigación sobre el pensamiento,
+            el deseo y sus posibles coordenadas
+            desde una perspectiva tralfamadoriana.
+
+        </div>
+
+
+
+        <div class="date">
+
+            30 septiembre 2026
+
+        </div>
+
+
+
+        <!-- ==============================
+             PDF
+        ============================== -->
+
+        <section class="document">
+
+
+            <div class="document-label">
+
+                Documento · Lectura
+
+            </div>
+
+
+
+            <p class="document-description">
+
+                Pensamientos Libidinosos: Un estudio científico
+                desde el paradigma de Tralfamadore.
+
+            </p>
+
+
+
+            <div class="pdf-container">
+
+
+                <iframe
+                    src="pdf/pensamientos-libidinosos-tralfamadore.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                    title="Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore">
+                </iframe>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         PIE
+    ============================== -->
+
+    <footer>
+
+        Pensamientos Libidinosos · 001
+
+    </footer>
 
 
 </body>
+
 </html>
+```
