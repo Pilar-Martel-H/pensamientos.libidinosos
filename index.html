@@ -2,432 +2,373 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pensamientos Libidinosos — Pilar Martel H</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <title>Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <meta name="description" content="Pensamientos Libidinosos, un archivo literario de Pilar Martel H.">
 
-        body {
-            margin: 0;
-            background: #000000;
-            color: #ffffff;
-            font-family: Georgia, "Times New Roman", serif;
-        }
+  <style>
+    :root {
+      --background: #000000;
+      --text: #ffffff;
+      --muted: #a5a5a5;
+      --line: #333333;
+    }
 
-        header {
-            min-height: 55vh;
-            padding: 45px 7vw 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-bottom: 1px solid #ffffff;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .top-line {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .title-container {
-            max-width: 1100px;
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 190px;
-            column-gap: 70px;
-            align-items: end;
-        }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
 
-        h1 {
-            margin: 0;
-            font-size: clamp(48px, 7vw, 100px);
-            line-height: 0.88;
-            font-weight: normal;
-            letter-spacing: -4px;
-        }
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
 
-        .subtitle {
-            margin-top: 35px;
-            max-width: 600px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            line-height: 1.7;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
+    a:hover {
+      color: var(--muted);
+    }
 
-        .author {
-            margin-top: 28px;
-            font-size: clamp(25px, 3vw, 38px);
-            line-height: 1;
-            letter-spacing: -1px;
-        }
+    .site-header {
+      padding: 24px 7vw;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        .blog-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
+    .site-header a {
+      color: var(--text);
+    }
 
-        .blog-button {
-            display: inline-block;
-            padding: 10px 16px;
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            background: transparent;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
+    .container {
+      width: 86%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        .blog-button:hover {
-            background: #ffffff;
-            color: #000000;
-        }
+    .hero {
+      padding: 65px 0 45px;
+      border-bottom: 1px solid var(--line);
+    }
 
-        .cover-image {
-            width: 175px;
-            justify-self: end;
-            align-self: end;
-            overflow: hidden;
-            margin-bottom: 4px;
-        }
+    .hero h1 {
+      max-width: 750px;
+      margin: 0 0 12px;
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
 
-        .cover-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(100%) contrast(1);
-            opacity: 0.82;
-            transition: transform 0.8s ease, filter 0.8s ease, opacity 0.8s ease;
-        }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
 
-        .cover-image:hover img {
-            transform: scale(1.035);
-            filter: grayscale(65%) contrast(1.08);
-            opacity: 1;
-        }
+    .author {
+      margin: 24px 0 0;
+      font-size: 21px;
+      letter-spacing: 0.4px;
+    }
 
-        main {
-            padding: 85px 7vw 110px;
-        }
+    .external-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 55px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    .external-links a {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid #777777;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
 
-        article {
-            display: grid;
-            grid-template-columns: 80px minmax(0, 650px) 1fr;
-            gap: 35px;
-            padding: 30px 0 50px;
-            border-top: 1px solid #444444;
-        }
+    .external-links a:hover {
+      background: var(--text);
+      color: var(--background);
+    }
 
-        .number {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
+    .cover {
+      display: flex;
+      justify-content: flex-end;
+      padding: 28px 0 12px;
+    }
 
-        article h2 {
-            margin: 0 0 20px;
-            font-size: clamp(28px, 3vw, 44px);
-            line-height: 0.98;
-            font-weight: normal;
-            letter-spacing: -1.5px;
-        }
+    .cover img {
+      display: block;
+      width: 175px;
+      max-width: 40%;
+      height: auto;
+      opacity: 0.82;
+      filter: grayscale(100%);
+      transition: opacity 0.3s;
+    }
 
-        article h2 a {
-            color: #ffffff;
-            text-decoration: none;
-        }
+    .cover img:hover {
+      opacity: 1;
+    }
 
-        article h2 a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 7px;
-        }
+    .section-heading {
+      margin: 0 0 25px;
+      font-size: 11px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-        article p {
-            margin: 0;
-            max-width: 560px;
-            color: #d0d0d0;
-            font-size: 16px;
-            line-height: 1.7;
-        }
+    .publications {
+      padding: 38px 0 65px;
+    }
 
-        .metadata {
-            align-self: end;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            line-height: 1.7;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-align: right;
-            color: #bbbbbb;
-        }
+    .post {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 15px;
+      padding: 23px 0;
+      border-top: 1px solid var(--line);
+    }
 
-        footer {
-            padding: 28px 7vw;
-            border-top: 1px solid #ffffff;
-            display: flex;
-            justify-content: space-between;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
+    .post-number {
+      padding-top: 4px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
 
-        @media (max-width: 750px) {
-            header {
-                min-height: 60vh;
-                padding: 35px 25px 40px;
-            }
+    .post-content h2 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: normal;
+      line-height: 1.45;
+    }
 
-            .top-line {
-                font-size: 8px;
-            }
+    .post-content h2 a {
+      text-decoration: none;
+      text-underline-offset: 4px;
+    }
 
-            .title-container {
-                display: block;
-            }
+    .post-content h2 a:hover {
+      text-decoration: underline;
+    }
 
-            h1 {
-                font-size: clamp(42px, 13vw, 75px);
-                letter-spacing: -2.5px;
-            }
+    .post-date {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-            .subtitle {
-                font-size: 9px;
-                max-width: 320px;
-            }
+    .site-footer {
+      padding: 24px 0 35px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
 
-            .author {
-                margin-top: 25px;
-                font-size: 27px;
-                letter-spacing: -0.5px;
-            }
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 20px 7vw;
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
 
-            .blog-links {
-                margin-top: 25px;
-                gap: 8px;
-            }
+      .hero {
+        padding: 45px 0 30px;
+      }
 
-            .blog-button {
-                padding: 9px 13px;
-                font-size: 8px;
-            }
+      .hero h1 {
+        font-size: 32px;
+      }
 
-            .cover-image {
-                width: 130px;
-                margin-top: 35px;
-                margin-left: 0;
-            }
+      .author {
+        font-size: 19px;
+      }
 
-            main {
-                padding: 60px 25px 80px;
-            }
+      .cover img {
+        width: 130px;
+      }
 
-            .section-header {
-                margin-bottom: 40px;
-            }
+      .post {
+        grid-template-columns: 38px 1fr;
+        gap: 10px;
+        padding: 20px 0;
+      }
 
-            article {
-                display: block;
-                padding: 28px 0 40px;
-            }
-
-            .number {
-                margin-bottom: 22px;
-            }
-
-            article h2 {
-                font-size: 34px;
-                letter-spacing: -1px;
-            }
-
-            article p {
-                font-size: 15px;
-            }
-
-            .metadata {
-                margin-top: 25px;
-                text-align: left;
-            }
-
-            footer {
-                display: block;
-                padding: 28px 25px;
-            }
-
-            footer span:last-child {
-                display: block;
-                margin-top: 10px;
-            }
-        }
-    </style>
+      .post-content h2 {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-    <div class="top-line">
-        <span>Archivo personal</span>
-        <span>2026 — ∞</span>
-    </div>
 
-    <div class="title-container">
-        <div>
-            <h1>Pensamientos<br>Libidinosos</h1>
+  <header class="site-header">
+    <a href="./">Archivo personal</a>
+    <span>2026 — ∞</span>
+  </header>
 
-            <div class="subtitle">
-                Textos, documentos y otras formas de pensamiento
-            </div>
+  <main class="container">
 
-            <div class="author">Pilar Martel H</div>
+    <section class="hero">
+      <h1>Pensamientos Libidinosos</h1>
 
-            <div class="blog-links">
-                <a class="blog-button"
-                   href="https://pensamientoslibidinosos.blogspot.com/"
-                   target="_blank" rel="noopener noreferrer">
-                    Primer blog
-                </a>
+      <p class="subtitle">
+        Textos, documentos y otras formas de pensamiento
+      </p>
 
-                <a class="blog-button"
-                   href="https://medium.com/@pensamientos.libidinosos"
-                   target="_blank" rel="noopener noreferrer">
-                    Segundo blog
-                </a>
-            </div>
+      <p class="author">Pilar Martel H</p>
+
+      <nav class="external-links" aria-label="Otros blogs">
+        <a href="https://pensamientoslibidinosos.blogspot.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Primer blog
+        </a>
+
+        <a href="https://medium.com/@pensamientos.libidinosos"
+           target="_blank"
+           rel="noopener noreferrer">
+          Segundo blog
+        </a>
+      </nav>
+
+      <div class="cover">
+        <img src="images/portada.jpg"
+             alt="Imagen de portada de Pensamientos Libidinosos">
+      </div>
+    </section>
+
+    <section class="publications">
+      <h2 class="section-heading">Publicaciones</h2>
+
+      <!-- Publicación 006 -->
+      <article class="post">
+        <span class="post-number">006</span>
+        <div class="post-content">
+          <h2>
+            <a href="pdf/dos-hombres-y-el-olor-a-tierra.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              Dos hombres y el olor a tierra
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
+      </article>
 
-        <div class="cover-image">
-            <img src="images/portada.jpg"
-                 alt="Imagen de portada de Pensamientos Libidinosos">
+      <!-- Publicación 005 -->
+      <article class="post">
+        <span class="post-number">005</span>
+        <div class="post-content">
+          <h2>
+            <a href="pdf/archivo-de-continentes-encuentros-con-hombres-africanos-de-distintos-pa%C3%ADses-africa.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              Archivo de continentes: encuentros con hombres africanos de distintos países de África
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
-    </div>
-</header>
+      </article>
 
-<main>
-    <div class="section-header">
-        <span>Archivo</span>
-        <span>005 — 001 · 2026</span>
-    </div>
-
-    <!-- PUBLICACIÓN 005 -->
-    <article>
-        <div class="number">005</div>
-
-        <div>
-            <h2>
-                <a href="pdf/archivo-de-continentes-encuentros-con-hombres-africanos-de-distintos-pa%C3%ADses-africa.pdf"
-                   target="_blank" rel="noopener noreferrer">
-                    Archivo de continentes: encuentros con hombres africanos de distintos países de África
-                </a>
-            </h2>
-
-            <p>Una nueva publicación del archivo Pensamientos Libidinosos.</p>
+      <!-- Publicación 004 -->
+      <article class="post">
+        <span class="post-number">004</span>
+        <div class="post-content">
+          <h2>
+            <a href="pdf/Inventarios-de-40-expresiones-masculinas-que-me-han-dicho-mientras-han-eyaculado-en-mi-boca.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              Inventarios de 40 expresiones masculinas que me han dicho mientras han eyaculado en mi boca
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
+      </article>
 
-        <div class="metadata">2026</div>
-    </article>
-
-    <!-- PUBLICACIÓN 004 -->
-    <article>
-        <div class="number">004</div>
-
-        <div>
-            <h2>
-                <a href="pdf/Inventarios-de-40-expresiones-masculinas-que-me-han-dicho-mientras-han-eyaculado-en-mi-boca.pdf"
-                   target="_blank" rel="noopener noreferrer">
-                    Inventarios de 40 expresiones masculinas que me han dicho mientras han eyaculado en mi boca
-                </a>
-            </h2>
-
-            <p>Un nuevo texto del archivo Pensamientos Libidinosos.</p>
+      <!-- Publicación 003 -->
+      <article class="post">
+        <span class="post-number">003</span>
+        <div class="post-content">
+          <h2>
+            <a href="pdf/Todo-empieza-en-el-chat.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+              Todo empieza en el chat
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
+      </article>
 
-        <div class="metadata">2026</div>
-    </article>
-
-    <!-- PUBLICACIÓN 003 -->
-    <article>
-        <div class="number">003</div>
-
-        <div>
-            <h2>
-                <a href="pdf/Todo-empieza-en-el-chat.pdf"
-                   target="_blank" rel="noopener noreferrer">
-                    Todo empieza en el chat
-                </a>
-            </h2>
-
-            <p>Un nuevo texto del archivo Pensamientos Libidinosos.</p>
+      <!-- Publicación 002 -->
+      <article class="post">
+        <span class="post-number">002</span>
+        <div class="post-content">
+          <h2>
+            <a href="cabalgando-la-nota.html">
+              Cabalgando la nota
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
+      </article>
 
-        <div class="metadata">2026</div>
-    </article>
-
-    <!-- PUBLICACIÓN 002 -->
-    <article>
-        <div class="number">002</div>
-
-        <div>
-            <h2>
-                <a href="cabalgando-la-nota.html">
-                    Cabalgando la nota
-                </a>
-            </h2>
-
-            <p>Un nuevo texto del archivo Pensamientos Libidinosos.</p>
+      <!-- Publicación 001 -->
+      <article class="post">
+        <span class="post-number">001</span>
+        <div class="post-content">
+          <h2>
+            <a href="pensamientos-libidinosos-tralfamadore.html">
+              Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore
+            </a>
+          </h2>
+          <p class="post-date">2026</p>
         </div>
+      </article>
 
-        <div class="metadata">2026</div>
-    </article>
+    </section>
 
-    <!-- PUBLICACIÓN 001 -->
-    <article>
-        <div class="number">001</div>
+    <footer class="site-footer">
+      © 2026 Pilar Martel H · Pensamientos Libidinosos
+    </footer>
 
-        <div>
-            <h2>
-                <a href="pensamientos-libidinosos-tralfamadore.html">
-                    Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore
-                </a>
-            </h2>
+  </main>
 
-            <p>Un estudio sobre el pensamiento y el deseo desde el paradigma de Tralfamadore.</p>
-        </div>
-
-        <div class="metadata">2026</div>
-    </article>
-</main>
-
-<footer>
-    <span>Pensamientos Libidinosos</span>
-    <span>Pilar Martel H</span>
-</footer>
 </body>
 </html>
