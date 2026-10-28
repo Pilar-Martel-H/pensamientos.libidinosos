@@ -1,0 +1,41 @@
+
+name: Actualizar índice del blog
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generar catálogo
+        run: python scripts/generar_catalogo.py
+
+      - name: Guardar catálogo actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalogo.json
+          if git diff --cached --quiet; then
+            echo "El catálogo no necesita cambios."
+          else
+            git commit -m "Actualizar catálogo de publicaciones"
+            git push
+          fi
