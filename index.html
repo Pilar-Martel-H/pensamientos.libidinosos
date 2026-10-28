@@ -55,10 +55,6 @@
       text-transform: uppercase;
     }
 
-    .site-header a {
-      color: var(--text);
-    }
-
     .container {
       width: 86%;
       max-width: 1000px;
@@ -101,7 +97,7 @@
     .external-links a {
       display: inline-block;
       padding: 9px 15px;
-      border: 1px solid #777777;
+      border: 1px solid #777;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       letter-spacing: 1.5px;
@@ -148,6 +144,78 @@
       padding: 38px 0 65px;
     }
 
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 150px;
+      gap: 12px;
+      margin: 0 0 20px;
+    }
+
+    .filters input,
+    .filters select {
+      width: 100%;
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #555;
+      border-radius: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+    }
+
+    .filters input::placeholder {
+      color: #aaa;
+    }
+
+    .filters input:focus,
+    .filters select:focus {
+      outline: 1px solid #aaa;
+      outline-offset: 2px;
+    }
+
+    .keyword-heading {
+      margin: 24px 0 10px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .keyword {
+      padding: 5px 9px;
+      border: 1px solid #444;
+      background: transparent;
+      color: #ccc;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .keyword:hover,
+    .keyword.active {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .results-count {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
     .post {
       display: grid;
       grid-template-columns: 52px 1fr;
@@ -171,13 +239,9 @@
       line-height: 1.45;
     }
 
-    .post-content h2 a {
-      text-decoration: none;
-      text-underline-offset: 4px;
-    }
-
     .post-content h2 a:hover {
       text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .post-date {
@@ -187,6 +251,26 @@
       font-size: 10px;
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    .post-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .post-keyword {
+      color: #aaa;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+    }
+
+    .empty-message {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .site-footer {
@@ -222,6 +306,10 @@
         width: 130px;
       }
 
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
       .post {
         grid-template-columns: 38px 1fr;
         gap: 10px;
@@ -236,14 +324,12 @@
 </head>
 
 <body>
-
   <header class="site-header">
     <a href="./">Archivo personal</a>
     <span>2026 — ∞</span>
   </header>
 
   <main class="container">
-
     <section class="hero">
       <h1>Pensamientos Libidinosos</h1>
 
@@ -255,14 +341,12 @@
 
       <nav class="external-links" aria-label="Otros blogs">
         <a href="https://pensamientoslibidinosos.blogspot.com/"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Primer blog
         </a>
 
         <a href="https://medium.com/@pensamientos.libidinosos"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Segundo blog
         </a>
       </nav>
@@ -276,99 +360,263 @@
     <section class="publications">
       <h2 class="section-heading">Publicaciones</h2>
 
-      <!-- Publicación 006 -->
-      <article class="post">
-        <span class="post-number">006</span>
-        <div class="post-content">
-          <h2>
-            <a href="pdf/dos-hombres-y-el-olor-a-tierra.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-              Dos hombres y el olor a tierra
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
+      <div class="filters">
+        <input
+          type="search"
+          id="search"
+          placeholder="Buscar por título o palabra clave..."
+          aria-label="Buscar publicaciones"
+        >
 
-      <!-- Publicación 005 -->
-      <article class="post">
-        <span class="post-number">005</span>
-        <div class="post-content">
-          <h2>
-            <a href="pdf/archivo-de-continentes-encuentros-con-hombres-africanos-de-distintos-pa%C3%ADses-africa.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-              Archivo de continentes: encuentros con hombres africanos de distintos países de África
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
+        <select id="year-filter" aria-label="Filtrar por año">
+          <option value="">Todos los años</option>
+        </select>
+      </div>
 
-      <!-- Publicación 004 -->
-      <article class="post">
-        <span class="post-number">004</span>
-        <div class="post-content">
-          <h2>
-            <a href="pdf/Inventarios-de-40-expresiones-masculinas-que-me-han-dicho-mientras-han-eyaculado-en-mi-boca.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-              Inventarios de 40 expresiones masculinas que me han dicho mientras han eyaculado en mi boca
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
+      <h3 class="keyword-heading">Índice de palabras clave</h3>
+      <div class="keywords" id="keywords">
+        <span class="post-date">Cargando palabras clave...</span>
+      </div>
 
-      <!-- Publicación 003 -->
-      <article class="post">
-        <span class="post-number">003</span>
-        <div class="post-content">
-          <h2>
-            <a href="pdf/Todo-empieza-en-el-chat.pdf"
-               target="_blank"
-               rel="noopener noreferrer">
-              Todo empieza en el chat
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
+      <p class="results-count" id="results-count" aria-live="polite">
+        Cargando publicaciones...
+      </p>
 
-      <!-- Publicación 002 -->
-      <article class="post">
-        <span class="post-number">002</span>
-        <div class="post-content">
-          <h2>
-            <a href="cabalgando-la-nota.html">
-              Cabalgando la nota
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
-
-      <!-- Publicación 001 -->
-      <article class="post">
-        <span class="post-number">001</span>
-        <div class="post-content">
-          <h2>
-            <a href="pensamientos-libidinosos-tralfamadore.html">
-              Pensamientos Libidinosos: Un estudio científico desde el paradigma de Tralfamadore
-            </a>
-          </h2>
-          <p class="post-date">2026</p>
-        </div>
-      </article>
-
+      <div id="post-list" aria-live="polite"></div>
     </section>
 
     <footer class="site-footer">
       © 2026 Pilar Martel H · Pensamientos Libidinosos
     </footer>
-
   </main>
 
+  <script>
+    const searchInput = document.getElementById("search");
+    const yearFilter = document.getElementById("year-filter");
+    const keywordContainer = document.getElementById("keywords");
+    const postList = document.getElementById("post-list");
+    const resultsCount = document.getElementById("results-count");
+
+    let publications = [];
+    let activeKeyword = "";
+
+    function normalize(value) {
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
+    function getYear(publication) {
+      const match = String(publication.date || "").match(/^\d{4}/);
+      return match ? match[0] : "";
+    }
+
+    function formatDate(publication) {
+      const date = String(publication.date || "");
+      return getYear(publication) || date || "Fecha no especificada";
+    }
+
+    function createKeywordButton(keyword) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "keyword";
+      button.textContent = keyword;
+
+      if (normalize(keyword) === normalize(activeKeyword)) {
+        button.classList.add("active");
+      }
+
+      button.addEventListener("click", () => {
+        activeKeyword =
+          normalize(activeKeyword) === normalize(keyword) ? "" : keyword;
+        renderKeywords();
+        renderPublications();
+      });
+
+      return button;
+    }
+
+    function renderKeywords() {
+      keywordContainer.replaceChildren();
+
+      const allButton = createKeywordButton("Todas");
+      allButton.addEventListener("click", () => {
+        activeKeyword = "";
+        renderKeywords();
+        renderPublications();
+      });
+      keywordContainer.appendChild(allButton);
+
+      const keywords = [...new Set(
+        publications.flatMap(item =>
+          Array.isArray(item.keywords) ? item.keywords : []
+        ).filter(Boolean)
+      )].sort((a, b) => a.localeCompare(b, "es"));
+
+      keywords.forEach(keyword => {
+        keywordContainer.appendChild(createKeywordButton(keyword));
+      });
+    }
+
+    function renderYears() {
+      const selectedYear = yearFilter.value;
+      const years = [...new Set(
+        publications.map(getYear).filter(Boolean)
+      )].sort((a, b) => b.localeCompare(a));
+
+      yearFilter.replaceChildren();
+
+      const allOption = document.createElement("option");
+      allOption.value = "";
+      allOption.textContent = "Todos los años";
+      yearFilter.appendChild(allOption);
+
+      years.forEach(year => {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        yearFilter.appendChild(option);
+      });
+
+      if (years.includes(selectedYear)) {
+        yearFilter.value = selectedYear;
+      }
+    }
+
+    function renderPublications() {
+      const query = normalize(searchInput.value);
+      const selectedYear = yearFilter.value;
+
+      const filtered = publications
+        .filter(item => {
+          const title = normalize(item.title);
+          const keywords = normalize(
+            Array.isArray(item.keywords) ? item.keywords.join(" ") : ""
+          );
+          const matchesSearch =
+            !query || title.includes(query) || keywords.includes(query);
+
+          const matchesYear =
+            !selectedYear || getYear(item) === selectedYear;
+
+          const matchesKeyword =
+            !activeKeyword ||
+            normalize(
+              Array.isArray(item.keywords) ? item.keywords.join(" ") : ""
+            ).split(/\s+/).length >= 0 &&
+            (Array.isArray(item.keywords) ? item.keywords : [])
+              .some(keyword => normalize(keyword) === normalize(activeKeyword));
+
+          return matchesSearch && matchesYear && matchesKeyword;
+        })
+        .map((item, index) => ({ item, index }))
+        .sort((a, b) => {
+          const dateA = String(a.item.date || "");
+          const dateB = String(b.item.date || "");
+          return dateB.localeCompare(dateA) || a.index - b.index;
+        })
+        .map(entry => entry.item);
+
+      postList.replaceChildren();
+      resultsCount.textContent =
+        filtered.length + (filtered.length === 1
+          ? " publicación"
+          : " publicaciones");
+
+      if (filtered.length === 0) {
+        const message = document.createElement("p");
+        message.className = "empty-message";
+        message.textContent =
+          "No se encontraron publicaciones con esos criterios.";
+        postList.appendChild(message);
+        return;
+      }
+
+      filtered.forEach((publication, index) => {
+        const article = document.createElement("article");
+        article.className = "post";
+
+        const number = document.createElement("span");
+        number.className = "post-number";
+        number.textContent = String(filtered.length - index).padStart(3, "0");
+
+        const content = document.createElement("div");
+        content.className = "post-content";
+
+        const heading = document.createElement("h2");
+        const link = document.createElement("a");
+        link.textContent = publication.title || "Publicación sin título";
+        link.href = publication.url || "#";
+
+        if (publication.type === "PDF" ||
+            /\.pdf(?:$|[?#])/i.test(publication.url || "")) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+
+        heading.appendChild(link);
+
+        const date = document.createElement("p");
+        date.className = "post-date";
+        date.textContent = formatDate(publication);
+
+        content.appendChild(heading);
+        content.appendChild(date);
+
+        if (Array.isArray(publication.keywords) &&
+            publication.keywords.length > 0) {
+          const keywordList = document.createElement("div");
+          keywordList.className = "post-keywords";
+
+          publication.keywords.forEach(keyword => {
+            const term = document.createElement("span");
+            term.className = "post-keyword";
+            term.textContent = "· " + keyword;
+            keywordList.appendChild(term);
+          });
+
+          content.appendChild(keywordList);
+        }
+
+        article.appendChild(number);
+        article.appendChild(content);
+        postList.appendChild(article);
+      });
+    }
+
+    searchInput.addEventListener("input", renderPublications);
+    yearFilter.addEventListener("change", renderPublications);
+
+    fetch("./catalogo.json")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("No se pudo cargar catalogo.json");
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data)) {
+          throw new Error("El catálogo no tiene el formato esperado");
+        }
+
+        publications = data;
+        renderYears();
+        renderKeywords();
+        renderPublications();
+      })
+      .catch(error => {
+        console.error(error);
+        resultsCount.textContent = "No se pudo cargar el catálogo.";
+        postList.replaceChildren();
+
+        const message = document.createElement("p");
+        message.className = "empty-message";
+        message.textContent =
+          "No fue posible cargar las publicaciones. Intenta recargar la página más tarde.";
+        postList.appendChild(message);
+      });
+  </script>
 </body>
 </html>
